@@ -31,9 +31,7 @@ class BokehApp(Application):
 
 
 @click.command()
-@click.option(
-    "--connection", required=True, type=str, help="A valid mongoDB connection string"
-)
+@click.option("--uri", required=True, type=str, help="A valid mongoDB uri string")
 @click.option("--db", required=True, type=str, help="mongoDB database name")
 @click.option("--collection", required=True, type=str, help="mongoDB collection name")
 @click.option(
@@ -42,12 +40,12 @@ class BokehApp(Application):
     type=click.Path(exists=True, file_okay=True, readable=True, resolve_path=True),
     help="Path to JSON file containg aggregation pipeline",
 )
-def main(connection: str, db: str, collection: str, pipeline: str) -> None:
+def main(uri: str, db: str, collection: str, pipeline: str) -> None:
     with open(pipeline, "r") as pipeline_file:
         pipeline_json = json.loads(pipeline_file.read())
 
     data_client = DataClient(
-        connection,
+        uri,
         db,
         collection,
         pipeline_json,
