@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "mongraph"
+version = "0.1.0"
+description = ""
+license = "MIT"
+authors = ["Ramit Mittal <commitemailoframit@protonmail.com>"]
+readme = "README.md"
+repository = "https://github.com/ramitmittal/mongraph"
+
+[tool.poetry.scripts]
+mongraph = "mongraph.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^7.1.2"
+pymongo = "^3.11.1"
+bokeh = "^2.2.3"
+networkx = "^2.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^20.8b1"
+flake8 = "^3.8.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

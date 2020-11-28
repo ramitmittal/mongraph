@@ -1,0 +1,14 @@
+[
+  {
+    "$project": {
+      "_id": 0,
+      "id": { "$toString": "$_id" },
+      "connectsTo": [{"$toString": "$reportsTo" }],
+      "attributes": {
+        "id": { "$toString": "$_id" },
+        "rank": "$rank",
+        "name": "$name"
+      }
+    }
+  }
+]
