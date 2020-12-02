@@ -21,12 +21,12 @@ $ mongraph --uri mongodb://localhost:27017 --db test --collection user --pipelin
 ## Examples
 A dataset and aggregation pipeline are provided in the `samples` directory. Just copy the `samples/` dir to your local machine and run:
 ```
-$ cd samples/
+$ cd samples/ninja
 
-$ mongoimport --uri mongodb://localhost:27017 --db test --collection ninjas ninja_data.json
+$ mongoimport --uri mongodb://localhost:27017/test --collection ninjas data.json
 
-$ mongraph --uri mongodb://localhost:27017 --db test --collection ninjas pipeline.json
+$ mongraph --uri mongodb://localhost:27017 --db test --collection ninjas --pipeline pipeline.json
 ```
 
 ## Sample Output
-![A screenshot of network plot](samples/out.png)
+![A screenshot of network plot](samples/ninja/out.png)
