@@ -1,17 +1,16 @@
 from bokeh.application.application import Application
 from bokeh.application.handlers import Handler
 
-from .plot import render
+from .layout_generator import LayoutGenerator
 
 
 class BokehHandler(Handler):
     def __init__(self, data_client):
         super(BokehHandler, self).__init__()
-        self.data_client = data_client
+        self.layout_generator = LayoutGenerator(data_client)
 
     def modify_document(self, doc):
-        nodes = self.data_client.fetch()
-        layout = render(nodes)
+        layout = self.layout_generator.create_layout()
 
         doc.title = "Mongraph"
         doc.add_root(layout)
