@@ -10,8 +10,8 @@ $ pip install git+https://github.com/ramitmittal/mongraph
 ### Prepare a pipeline
 Write a JSON file containing an aggregation pipeline. Ensure that you `project` the following fields:  
 * `id` - any hashable type
-* `connectsTo` - an array of a hashable type
-* `attributes` - an object with all the other properties of the record you want to see on the graph
+* `connectsTo` - an array of ids (connect nodes using the id field)
+* `attributes` - an object with all the other properties of the record you want to see on the graph (nested objects don't work)
 
 ### Run mongraph
 ```
