@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "mongraph"
 version = "0.1.0"
-description = ""
+description = "A tool for visualizing mongodb records as a network of nodes."
 license = "MIT"
 authors = ["Ramit Mittal <commitemailoframit@protonmail.com>"]
 readme = "README.md"
